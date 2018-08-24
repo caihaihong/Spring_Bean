@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置资源，把对象的创建交给Spring来管理-->
+    <bean id="customerService" class="com.service.imple.CustomerServiceImpl" scope="singleton" init-method="init" destroy-method="destroy"></bean>
+
+    <!--&lt;!&ndash;配置使用静态工厂创建bean&ndash;&gt;-->
+    <!--<bean id="staticCustomerService" class="com.factory.StaticFactory" factory-method="getCustomerService"></bean>-->
+    <!--&lt;!&ndash;用这个id staticCustomerService来使用这个工厂StaticFactory的这个方法getCustomerService创建对象&ndash;&gt;-->
+
+    <!--&lt;!&ndash;配置使用实例工厂创建bean&ndash;&gt;-->
+    <!--<bean id="instanceFactory" class="com.factory.InstanceFactory"></bean>-->
+    <!--<bean id="instanceCustomerService" factory-bean="instanceFactory" factory-method="getCustomerService"></bean>-->
+    <!--&lt;!&ndash;先创建一个工厂对象，再用工厂对象instanceFactory的getCustomerService方法创建实例对象&ndash;&gt;-->
+</beans>
